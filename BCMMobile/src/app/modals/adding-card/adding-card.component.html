@@ -1,0 +1,79 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Добавление</ion-card-subtitle>
+      <ion-card-title>Визитки</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Имя <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required
+                   type="text"
+                   [value]="card.firstName"
+                   (ionChange)="handleFirstNameValue($event)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Фамилия <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required
+                   type="text"
+                   [value]="card.lastName"
+                   (ionChange)="handleLastNameValue($event)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Адресс <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required
+                   type="text"
+                   [value]="card.adress"
+                   (ionChange)="handleAdressValue($event)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Компания <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required
+                   type="text"
+                   [value]="card.company"
+                   (ionChange)="handleCompanyValue($event)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Телефон <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required
+                   type="text"
+                   [value]="card.phone"
+                   (ionChange)="handlePhoneValue($event)"></ion-input>
+      </ion-item>
+
+      <ng-container *ngIf="card.businessCardUrl; else elseTemplate">
+        <ion-item lines="none">
+          <ion-label position="stacked"
+                     style="margin-top: 20px;">Фото
+          </ion-label>
+        </ion-item>
+        <ion-img [src]="picture"></ion-img>
+      </ng-container>
+
+      <ion-segment style="margin-top: 20px;">
+        <ion-segment-button (click)="startCamera()"
+                            style="width: 50%;">
+          <ion-label>Фото</ion-label>
+          <ion-icon name="images"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button style="width: 50%;"
+                            (click)="presentQrScanner()">
+          <ion-label>QR-код</ion-label>
+          <ion-icon name="qr-scanner"></ion-icon>
+        </ion-segment-button>
+      </ion-segment>
+
+    </ion-card-content>
+
+    <ion-button expand="block"
+                type="submit"
+                (click)="submit()"
+                class="padding15 margin10">{{isUpdate ? 'Обновнить' : 'Создать'}}</ion-button>
+  </ion-card>
+</ion-content>

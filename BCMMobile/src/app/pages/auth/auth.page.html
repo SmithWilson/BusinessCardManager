@@ -1,0 +1,47 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Авторизация в приложении</ion-card-subtitle>
+      <ion-card-title>Твои визитки</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <div *ngIf="!state">
+        <ion-label position="stacked">Имя <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required
+                   type="text"
+                   (ionChange)="handleFirstNameValue($event)"></ion-input>
+        <ion-label position="stacked">Фамилия <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required
+                   type="text"
+                   (ionChange)="handleLastNameValue($event)"></ion-input>
+      </div>
+
+      <ion-label position="stacked">Логин <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required
+                 type="text"
+                 (ionChange)="handleLoginValue($event)"></ion-input>
+      <ion-label position="stacked">Пароль <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required
+                 type="text"
+                 (ionChange)="handlePasswordValue($event)"></ion-input>
+
+      <div class="stateToggle">
+        <ion-checkbox [(ngModel)]="state"
+                      name="blueberry"
+                      checked></ion-checkbox>
+        <h4>Есть аккаунт?</h4>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block"
+              type="submit"
+              (click)="state ? login() : registration()"
+              class="padding15">Авторизоваться</ion-button>
+
+</ion-content>

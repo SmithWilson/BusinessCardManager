@@ -1,0 +1,32 @@
+.stateToggle{
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 15px;
+  }
+  
+  .stateToggle h4{
+	margin-left: 10px;
+  }
+  
+  .padding15{
+	padding: 0 15px;
+  }
+
+  .margin10{
+	  margin-bottom: 10px;
+  }
+
+  .segmentBlock{
+	height: 60px;
+	padding: 0 20px;
+	margin-bottom: 10px;
+  }
+
+  .alignContent{
+	display: flex;
+	flex-flow: column;
+	align-items: flex-start;
+	text-align: start;
+  }

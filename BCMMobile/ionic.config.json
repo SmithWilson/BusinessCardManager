@@ -1,0 +1,7 @@
+{
+  "name": "BCMMobile",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

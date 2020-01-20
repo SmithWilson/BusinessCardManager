@@ -1,0 +1,37 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Визитка</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="alignContent">
+      <ion-label position="stacked"
+                 *ngIf="card.firstName">Имя - {{card.firstName}}
+      </ion-label>
+      <ion-label position="stacked"
+                 *ngIf="card.lastName">Фамилия - {{card.lastName}}
+      </ion-label>
+      <ion-label position="stacked"
+                 *ngIf="card.adress">Адресс - {{card.adress}}
+      </ion-label>
+      <ion-label position="stacked"
+                 *ngIf="card.company">Компания - {{card.company}}
+      </ion-label>
+      <ion-label position="stacked"
+                 *ngIf="card.phone">Телефон - {{card.phone}}
+      </ion-label>
+
+      <ng-container *ngIf="card.businessCardUrl; else elseTemplate">
+        <ion-label position="stacked">Фото
+        </ion-label>
+        <ion-img [src]="picture"></ion-img>
+      </ng-container>
+
+    </ion-card-content>
+
+    <ion-button expand="block"
+                type="submit"
+                (click)="submit()"
+                class="padding15 margin10">Закрыть</ion-button>
+  </ion-card>
+</ion-content>

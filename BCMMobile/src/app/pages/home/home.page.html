@@ -1,0 +1,19 @@
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Визитные карточки</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let card of cards" (click)="presentActionSheet(card)">
+      <ion-label>{{card.lastName}} {{card.firstName}} - {{card.company}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom"
+           horizontal="end"
+           slot="fixed"
+           (click)="addingCardModal()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
